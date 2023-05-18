@@ -1,0 +1,45 @@
+CREATE DATABASE KND;
+
+CREATE TABLE tareas(
+id int primary key auto_increment,
+titulo_tarea varchar(30),
+descripcion varchar(50),
+fecha_de_creacion date,
+estado varchar(50),
+
+foreign key (titulo_tarea) references etiquetas(Nombre_Etiqueta)
+);
+
+create table etiquetas(
+ide int,
+Nombre_etiqueta varchar(20) primary key,
+etiquetado varchar(30)
+);
+
+create table usuario(
+folio int primary key,
+nombre varchar(50),
+pass varchar(10));
+
+insert into etiquetas(ide, Nombre_etiqueta, etiquetado) values(2, 'pintar', 'DOMINGO');
+insert into etiquetas(ide, Nombre_etiqueta, etiquetado) values(1, 'barrer', 'SABADO-DOMINGO');
+
+INSERT INTO usuario(folio, nombre, pass) values(
+
+insert into tareas(titulo_tarea, descripcion, fecha_de_creacion, estado) values( 'pintar', 'pintar la casa', '2000-08-23', "completada");
+insert into tareas(titulo_tarea, descripcion, fecha_de_creacion, estado) values( 'pintar', 'pintar la casa', '2000-08-23', "completada");
+insert into tareas(titulo_tarea, descripcion, fecha_de_creacion, estado) values( 'pintar', 'pintar la casa', '2000-08-23', "completada");
+
+
+
+select * from tareas where estado='pendiente';
+
+select * from tareas where fecha_de_creacion between '2000-08-22' and '2000-08-26';
+
+select * from KND.etiquetas join KND.tareas on KND.etiquetas.Nombre_etiqueta = KND.tareas.titulo_tarea;
+
+select count(*) FROM tareas where estado='completada';
+
+select count(*) FROM tareas where estado='pendiente';
+
+select count(*) FROM tareas where estado='en progreso';

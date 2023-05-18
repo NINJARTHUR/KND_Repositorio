@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <conio.h>
+//KND
+int main(){
+	int lapiz[10], n, k,i,contador;
+
+   printf("ingrese el numero de lapices;");
+   scanf("%i",&n);
+
+   printf("\n");
+
+   for(i=0;i<n;i++){
+   	scanf("%i",&lapiz[i]);
+   }
+
+   for(i=0;i<n;i++){
+   	printf("%i\t",lapiz[i]);
+   }
+
+
+   printf("\n\nNumero de lapiz:");
+   scanf("%i",&k);
+
+   for(i=0;i<=n;i++){
+   	if(k==lapiz[i]){
+      		contador++;
+          }
+
+   }
+
+   printf("\n\nHay %i lapices del numero %i",contador,k);
+   getche();
+}
